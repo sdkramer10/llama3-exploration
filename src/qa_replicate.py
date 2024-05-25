@@ -16,8 +16,8 @@ for i, row in enumerate(df.iterrows()):
             "max_tokens": 512,
             "temperature": 0,
             "system_prompt": system_message,
-            "max_new_tokens": 512,
-            "log_performance_metrics": False
+            "log_performance_metrics": False,
+            "seed": 42,
         },
     )
     response = ''.join(response)

@@ -5,13 +5,13 @@ import requests
 
 system_message = 'You are a helpful assistant. You response must contain ONLY the answer to the question (a, b, c, or d), with NO explanation.'
 llm = 'llama3:8b-instruct-q6_K'
+url = 'http://localhost:11434/api/generate'
 
 guesses = list()
 df = pd.read_csv('../data/TruthfulQA.csv')
 for i, row in enumerate(df.iterrows()):
     print(f"Question {i}: {row[1]['prompt']}")
 
-    url = 'http://localhost:11434/api/generate'
     data = {
         "model": llm,
         "prompt": row[1]['prompt'],
